@@ -44,9 +44,9 @@ The following are the key aspects of the approach:
 - Python 3.8+
 - PostgreSQL installed and running
 - Install required Python libraries:
- 
+  ```bash
   pip install -r requirements.txt
-
+  ```
 
 ### Set Up PostgreSQL:
 1. Create a PostgreSQL database and user:
@@ -62,14 +62,14 @@ The following are the key aspects of the approach:
    ```
 
 2. Initialize the database by running the following:
-  
+   ```bash
    python app.py
-
+   ```
 
 ### Run the Flask Application:
-
+```bash
 python app.py
-
+```
 
 The application will be available at `http://127.0.0.1:5000/`.
 
@@ -89,48 +89,48 @@ Content-Type: application/json
 ```
 
 **Response:**
-
+```json
 {
   "original_url": "https://example.com",
   "short_url": "http://127.0.0.1:5000/exmpl",
   "short_code": "exmpl",
   "expires_at": "2025-03-31T00:00:00"
 }
-
+```
 
 ### 2. Redirect to Original URL
 **Request:**
-
+```bash
 GET /exmpl
-
+```
 
 **Response:**
 Redirects to `https://example.com`.
 
 ### 3. Get URL Stats
 **Request:**
-
+```bash
 GET /stats/exmpl
-
+```
 
 **Response:**
-
+```json
 {
   "original_url": "https://example.com",
   "short_code": "exmpl",
   "access_count": 5,
   "expires_at": "2025-03-31T00:00:00"
 }
-
+```
 
 ### 4. View All Mappings
 **Request:**
-
+```bash
 GET /mappings
-
+```
 
 **Response:**
-
+```json
 [
   {
     "long_url": "https://example.com",
@@ -139,5 +139,7 @@ GET /mappings
     "expires_at": "2025-03-31T00:00:00"
   }
 ]
+```
+
 
 
